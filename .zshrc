@@ -67,3 +67,6 @@ alias ll='eza -lah --icons'
 alias n='nvim'
 alias c='claude'
 alias q='q-claude'
+
+# === FZF ===
+source "$ZDOTDIR/fzf.zsh"
