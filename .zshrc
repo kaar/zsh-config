@@ -59,8 +59,5 @@ compinit
 # Case-insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
 
-# === Aliases ===
 source "$ZDOTDIR/alias.zsh"
-
-# === FZF ===
 source "$ZDOTDIR/fzf.zsh"
