@@ -61,6 +61,9 @@ export FZF_CTRL_R_OPTS="
   --header 'ctrl-y: copy to clipboard'
 "
 
+# fzf opens in a tmux split-pane
+export FZF_TMUX=1
+
 # fcd: fuzzy cd into any directory under ~/Dev
 fcd() {
   local dir
