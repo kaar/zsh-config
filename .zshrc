@@ -56,17 +56,7 @@ compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
 
 # === Aliases ===
-# Safer defaults
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-alias reload='source $ZDOTDIR/.zshrc'
-alias ls='eza --icons'
-alias ll='eza -lah --icons'
-alias n='nvim'
-alias c='claude'
-alias q='q-claude'
+source "$ZDOTDIR/alias.zsh"
 
 # === FZF ===
 source "$ZDOTDIR/fzf.zsh"
