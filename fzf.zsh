@@ -24,22 +24,23 @@ eval "$(fzf --zsh)"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
-
-# Default fzf appearance
-export FZF_DEFAULT_OPTS='
+GRUVBOX_MATERIAL='
+  --color=bg+:#3a3735,bg:#2a2827,spinner:#ea6962,hl:#928374
+  --color=fg:#d4be98,header:#928374,info:#89b482,pointer:#ea6962
+  --color=marker:#ea6962,fg+:#d4be98,prompt:#ea6962,hl+:#ea6962
+  --color=border:#504945'
+FZF_COLOR_SCHEMA=$GRUVEBOX_MATERIAL
+export FZF_DEFAULT_OPTS="
   --height=60%
   --layout=reverse
   --border=rounded
   --info=inline
-  --prompt="❯ "
-  --pointer="▶"
-  --marker="✓"
-  --color=fg:#c0caf5,bg:-1,hl:#bb9af7
-  --color=fg+:#c0caf5,bg+:#283457,hl+:#7dcfff
-  --color=info:#7aa2f7,prompt:#7dcfff,pointer:#bb9af7
-  --color=marker:#9ece6a,spinner:#bb9af7,header:#565f89
-  --bind="ctrl-d:half-page-down,ctrl-u:half-page-up"
-'
+  --prompt='❯ '
+  --pointer='▶'
+  --marker='✓'
+  $FZF_COLOR_SCHEMA
+  --bind='ctrl-d:half-page-down,ctrl-u:half-page-up'
+"
 
 # Ctrl+T: file finder with bat preview
 export FZF_CTRL_T_OPTS="
