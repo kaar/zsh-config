@@ -1,8 +1,12 @@
 # Path setup
-export REPOS="$HOME/Dev/"
+export GITHUB_REPOS="$HOME/GitHub"
+export DEV="$HOME/Dev"
+export REPOS=$GITHUB_REPOS
+
 export SCRIPTS="$HOME/Dev/scripts"
 export BREW_BIN="/opt/homebrew/bin"
 export PATH="$BREW_BIN:$SCRIPTS:$PATH"
+
 
 # Enable vi mode
 bindkey -v
