@@ -7,13 +7,13 @@ export SCRIPTS="$HOME/Dev/scripts"
 export BREW_BIN="/opt/homebrew/bin"
 export PATH="$BREW_BIN:$SCRIPTS:$PATH"
 
-
 # Enable vi mode
 bindkey -v
 
 # Faster mode switching (no delay after ESC)
 export KEYTIMEOUT=1
 export EDITOR=nvim
+export MANPAGER="nvim +Man!"
 
 # Enable editing the current command in vim
 autoload -Uz edit-command-line
