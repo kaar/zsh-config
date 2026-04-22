@@ -7,36 +7,34 @@ export SCRIPTS="$HOME/Dev/scripts"
 export PATH="${HOMEBREW_PREFIX}/bin:$SCRIPTS:$PATH"
 FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 
-# Enable vi mode
-bindkey -v
-
-# Faster mode switching (no delay after ESC)
-export KEYTIMEOUT=1
 export EDITOR=nvim
 export MANPAGER="nvim +Man!"
 
-# Enable editing the current command in vim
+bindkey -v
+export KEYTIMEOUT=1
+
+# Edit command line in $EDITOR
+# - v        (command mode)  standard zsh vi-mode binding
+# - Ctrl-X Ctrl-E (insert)   standard readline binding (same as bash)
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey -M vicmd v edit-command-line   # press 'v' in normal mode
-bindkey -M viins '^Xe' edit-command-line  # Ctrl+X E in insert mode
+bindkey -M vicmd v       edit-command-line
+bindkey -M viins '^X^E'  edit-command-line
 
-# Better navigation in insert mode
+# - Ctrl-A   jump to beginning of line
+# - Ctrl-E   jump to end of line
+# - Ctrl-_   undo
+# - Ctrl-?   backspace (fixes terminals that send DEL)
 bindkey -M viins '^A' beginning-of-line
 bindkey -M viins '^E' end-of-line
-
-# Undo like vim
 bindkey -M viins '^_' undo
-
-# Search history like vim (/ and ?)
-bindkey -M vicmd '/' history-incremental-search-backward
-bindkey -M vicmd '?' history-incremental-search-forward
-
-# Fix backspace
 bindkey '^?' backward-delete-char
 
-# Optional: make jj act like ESC (faster than reaching ESC)
-bindkey -M viins 'jj' vi-cmd-mode
+# Vim-style history search in command mode
+# - /        incremental search backward
+# - ?        incremental search forward
+bindkey -M vicmd '/' history-incremental-search-backward
+bindkey -M vicmd '?' history-incremental-search-forward
 
 # Colors
 autoload -Uz colors && colors
