@@ -7,6 +7,8 @@ export SCRIPTS="$HOME/Dev/scripts"
 export BREW_BIN="/opt/homebrew/bin"
 export PATH="$BREW_BIN:$SCRIPTS:$PATH"
 
+FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+
 # Enable vi mode
 bindkey -v
 
