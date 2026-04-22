@@ -4,10 +4,8 @@ export DEV="$HOME/Dev"
 export REPOS=$GITHUB_REPOS
 
 export SCRIPTS="$HOME/Dev/scripts"
-export BREW_BIN="/opt/homebrew/bin"
-export PATH="$BREW_BIN:$SCRIPTS:$PATH"
-
-FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+export PATH="${HOMEBREW_PREFIX}/bin:$SCRIPTS:$PATH"
+FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 
 # Enable vi mode
 bindkey -v
