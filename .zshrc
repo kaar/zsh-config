@@ -59,3 +59,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
 
 source "$ZDOTDIR/alias.zsh"
 source "$ZDOTDIR/fzf.zsh"
+
+# Rust
+source "$HOME/.cargo/env"
